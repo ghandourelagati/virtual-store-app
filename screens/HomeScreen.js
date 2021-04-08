@@ -5,36 +5,36 @@ import { Text, View } from '../components/Themed';
 import { Card } from 'react-native-elements';
 
 export default class HomeScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      image: null,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     image: null,
+  //   };
+  // }
 
   render() {
-    let image = products.map((product) => {
-      image = this.setState.image;
-    });
+    // let image = products.map((product) => {
+    //   image = this.setState.image;
+    // });
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Card style={styles.card}>
+          {/* <Card style={styles.card}>
             <Card.Title>CARD WITH DIVIDER</Card.Title>
-            <Card.Divider />
-            {products.map((product, _id) => {
-              return (
-                <View key={_id} style={styles.container}>
-                  <Image
-                    style={styles.image}
-                    resizeMode='contain'
-                    source={product.image}
-                  />
-                  <Text style={styles.name}>{product.name}</Text>
-                </View>
-              );
-            })}
-          </Card>
+            <Card.Divider /> */}
+          {products.map((product, _id) => {
+            return (
+              <View key={_id} style={styles.container}>
+                <Text style={styles.text}>{product.name}</Text>
+                <Image
+                  style={styles.image}
+                  resizeMode='cover'
+                  source={product.image}
+                />
+              </View>
+            );
+          })}
+          {/* </Card> */}
         </ScrollView>
       </SafeAreaView>
     );
@@ -52,14 +52,18 @@ const styles = StyleSheet.create({
     height: 250,
     alignContent: 'center',
     justifyContent: 'center',
+    alignSelf: 'center',
+    borderRadius: 20,
   },
   card: {
     flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
   },
-  logo: {
-    width: 66,
-    height: 58,
+  text: {
+    textAlign: 'center',
+    marginBottom: 20,
+    marginTop: 20,
+    fontWeight: 'bold',
   },
 });

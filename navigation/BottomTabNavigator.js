@@ -92,7 +92,7 @@ function HomeNavigator() {
       <HomeStack.Screen
         name='HomeScreen'
         component={HomeScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Virtual Store' }}
       />
     </HomeStack.Navigator>
   );
