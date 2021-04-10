@@ -12,11 +12,9 @@ const Product = ({ product }) => {
         <Card.Title>{product.name}</Card.Title>
 
         <Text style={styles.text}>
-          <Rating
-            value={product.rating}
-            text={`${product.numReviews} reviews`}
-          />
+          <Rating value={product.rating} />
         </Text>
+        <Text style={styles.text}>{`${product.numReviews} reviews`}</Text>
         <Text style={styles.price}>EGP {product.price}</Text>
         <Card.Divider />
       </Card>
