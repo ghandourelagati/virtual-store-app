@@ -2,39 +2,20 @@ import * as React from 'react';
 import products from '../products';
 import { StyleSheet, ScrollView, SafeAreaView, Image } from 'react-native';
 import { Text, View } from '../components/Themed';
-import { Card } from 'react-native-elements';
+import Product from '../components/Product';
 
 export default class HomeScreen extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     image: null,
-  //   };
-  // }
-
   render() {
-    // let image = products.map((product) => {
-    //   image = this.setState.image;
-    // });
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          {/* <Card style={styles.card}>
-            <Card.Title>CARD WITH DIVIDER</Card.Title>
-            <Card.Divider /> */}
           {products.map((product, _id) => {
             return (
               <View key={_id} style={styles.container}>
-                <Text style={styles.text}>{product.name}</Text>
-                <Image
-                  style={styles.image}
-                  resizeMode='cover'
-                  source={product.image}
-                />
+                <Product product={product} />
               </View>
             );
           })}
-          {/* </Card> */}
         </ScrollView>
       </SafeAreaView>
     );
